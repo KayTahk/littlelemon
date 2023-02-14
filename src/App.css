@@ -13,6 +13,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.content {
+  font-size: large;
+  text-align: center;
+  min-height: calc(100vh - 600px)
+}
+
 .App {
   text-align: center;
 }
@@ -37,8 +43,15 @@ body {
   }
 }
 
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
 .navigation {
-  position: relative;
+  position: sticky;
+  top: 0;
+  background-color: #FFF;
   overflow: hidden;
   font-family: 'Markazi Text';
   font-weight: bold;
@@ -70,6 +83,7 @@ body {
 .Logo {
   background-color: #FFF;
   border: none;
+  cursor: pointer;
 }
 
 .hamburger {
@@ -121,6 +135,21 @@ body {
   color: #EDEFEE;
 }
 
+.hero button {
+  width: 8rem;
+  margin-bottom: 2rem;
+  width: 200px;
+  height: 40px;
+  background: #F4CE14;
+  border-radius: 16px;
+  border: none;
+  font-family: "Karla";
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+
 h1 {
   display: grid;
   justify-content: start;
@@ -140,6 +169,12 @@ h2 {
   margin-left: 2rem;
 }
 
+h3 {
+  font-family: "Karla";
+  font-size: 40px;
+  color: #495E57;
+}
+
 article {
   display: grid;
   align-items: center;
@@ -153,7 +188,57 @@ article {
   font-weight: normal;
 }
 
-.hero button {
+.highlights{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  padding: 5rem;
+  width: 80rem;
+  align-self: center;
+}
+
+.highlights-header {
+  display: flex;
+  padding: 2rem;
+  justify-content: space-between;
+}
+
+.highlights .dishcard {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.highlight-dish {
+  display: flex;
+  flex-direction: column;
+  background-color: #EDEFEE;
+  border-radius: 16px;
+  width: 15rem;
+  margin: 1rem;
+}
+
+.highlight-dish article {
+ margin-left: 1.5rem;
+}
+
+.dish-header {
+  margin-top: 1rem;
+  margin-left: 1.5rem;
+  display: flex;
+}
+
+.dish-name {
+  align-self: flex-start;
+  padding-right: 1.5rem;
+}
+
+.price {
+  align-self: flex-end;
+}
+
+.highlights button {
   width: 8rem;
   margin-bottom: 2rem;
   width: 200px;
@@ -165,8 +250,164 @@ article {
   font-size: 16px;
   font-weight: bold;
   margin: 0.5rem;
+  cursor: pointer;
 }
 
+.highlight-dish img {
+  width: 15rem;
+  height: 10rem;
+  border-radius: 16px 16px 0px 0px;
+}
+
+.highlight-dish .dish-delivery {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.highlight-dish .deliveryimg img {
+  width: 2rem;
+  height: 1.5rem;
+}
+
+.highlight-dish .deliveryimg {
+  align-self: center;
+  justify-self: center;
+}
+
+.highlight-dish a:link {
+  text-decoration: none;
+}
+
+.highlight-dish a {
+  color: black;
+}
+
+.about {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  align-content: center;
+  justify-content: center;
+  background-image: url('./components/images/Mario and Adrian A.jpg');
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  height: 900px;
+}
+
+.about-text {
+  display: grid;
+  margin: 0.5rem;
+  background: #495E57;
+  width: 26.75rem;
+  border-radius: 16px;
+  color: #EDEFEE;
+}
+
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 5rem;
+}
+
+.testimonials h3 {
+  padding-bottom: 5rem;
+}
+
+.testimonial-card article {
+  margin-left: 1.5rem;
+}
+
+.testimonial-card .username {
+  align-self: flex-start;
+  padding-left: 0.75rem;
+  padding-top: 0.5rem;
+}
+
+.testimonials .testimonialcard {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #EDEFEE;
+  border-radius: 16px;
+  width: 15rem;
+  margin: 1rem;
+  justify-content: flex-end;
+}
+
+.testimonials .testimonial-img img {
+  width: 15rem;
+  height: 10rem;
+  border-radius: 0px 0px 16px 16px;
+  object-fit: cover;
+}
+
+.testimonials .testimonial-img {
+  display: flex;
+  justify-self: flex-end;
+}
+
+.testimonials .starimg img {
+  width: 15rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-bottom: 1rem;
+}
+
+.footer {
+  background-color: black;
+  flex-shrink: 0;
+  height: 35rem;
+  color: #EDEFEE;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.footer h2 {
+  margin: 0;
+  line-height:2rem;
+  padding-bottom: 0.5rem;
+}
+
+.footer ul {
+  padding: 5rem;
+  line-height:1.5rem;
+}
+.footer li {
+  list-style: none;
+  color: #EDEFEE;
+}
+
+.footer a:link {
+  text-decoration: none;
+}
+
+.footer a:any-link {
+  color: #EDEFEE;
+}
+
+.footer img {
+  height: 22rem;
+  padding: 5rem;
+  margin-right: 5rem;
+}
 
 @media screen and (max-width: 768px) {
 
@@ -214,6 +455,44 @@ article {
   }
   .hero-text {
     width: 22rem;
+  }
+
+  .about-text {
+    width: 22rem;
+  }
+
+  .highlights {
+    width: 100%;
+    align-items: center;
+  }
+
+  .highlights .dishcard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+  }
+
+  .testimonials .testimonialcard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+  }
+
+  .footer {
+    display: grid;
+    justify-content: center;
+  }
+
+  .footer img {
+    display: none;
+  }
+
+  .footer ul {
+    padding: 2rem;
   }
 }
 

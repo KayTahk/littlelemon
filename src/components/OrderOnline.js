@@ -1,6 +1,6 @@
 function OrderOnline() {
     return (
-    <h1>Order Online under construction</h1>
+        <div className="content">Order Online is under construction</div>
     );
 }
 

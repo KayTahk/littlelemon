@@ -1,6 +1,6 @@
 function Menu() {
     return (
-    <h1>Menu under construction</h1>
+    <div className="content">Menu is under construction</div>
     );
 }
 

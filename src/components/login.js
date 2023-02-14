@@ -1,6 +1,6 @@
 function Login() {
     return (
-    <h1>Login to account is under construction</h1>
+        <div className="content">Login to account is under construction</div>
     );
 }
 

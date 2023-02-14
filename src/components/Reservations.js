@@ -1,6 +1,6 @@
 function Reservations() {
     return (
-    <h1>Reservations</h1>
+        <div className="content">Reservations is under construction</div>
     );
 }
 

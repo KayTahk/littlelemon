@@ -1,3 +1,5 @@
+/* general selectors */
+
 *{
   margin:0;
   padding:0;
@@ -47,6 +49,8 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+/* Navigation */
 
 .navigation {
   position: sticky;
@@ -112,6 +116,8 @@ body {
   border: none;
   display: none;
 }
+
+/* Hero */
 
 .hero {
   display: flex;
@@ -187,6 +193,8 @@ article {
   font-size: 16px;
   font-weight: normal;
 }
+
+/* Highlights */
 
 .highlights{
   display: flex;
@@ -287,6 +295,8 @@ article {
   color: black;
 }
 
+/* About */
+
 .about {
   display: flex;
   flex-flow: column wrap;
@@ -308,6 +318,8 @@ article {
   border-radius: 16px;
   color: #EDEFEE;
 }
+
+/* Testimonials */
 
 .testimonials {
   display: flex;
@@ -368,6 +380,8 @@ article {
   padding-bottom: 1rem;
 }
 
+/* Footer */
+
 .footer {
   background-color: black;
   flex-shrink: 0;
@@ -408,6 +422,140 @@ article {
   padding: 5rem;
   margin-right: 5rem;
 }
+
+/* Forms */
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: calc(100vh - 600px);
+  align-content: flex-start;
+}
+
+.signup-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: calc(100vh - 600px);
+  align-content: flex-start;
+  display: none;
+}
+
+.login-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: calc(100vh - 600px);
+  align-content: flex-start;
+}
+
+.form-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5rem;
+  padding-bottom: 1rem;
+}
+
+.form-header h5 {
+  font-weight: normal;
+}
+
+fieldset {
+  border: none;
+}
+
+fieldset h2 {
+  justify-content: center;
+  margin-left: 0;
+  font-size: 40px;
+  color: #495E57;
+}
+
+input {
+  width: 100%;
+  height: 2rem;
+  background-color: #EDEFEE;
+  border-color: black;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
+  text-indent: 0.25rem;
+}
+
+select {
+  width: 100%;
+  height: 2rem;
+  background-color: #EDEFEE;
+  border-color: black;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+}
+
+form button {
+  width: 14rem;
+  margin-bottom: 5rem;
+  height: 40px;
+  background: #F4CE14;
+  color: black;
+  border-radius: 16px;
+  border: none;
+  font-family: "Karla";
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 2rem;
+  cursor: pointer;
+}
+
+form p {
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+sup {
+  color: red;
+}
+
+.FieldError {
+  overflow: visible;
+  font-size: 12px;
+  color: red;
+  padding: 0 ;
+}
+
+h6 {
+  background-color: #EDEFEE;
+  font-family: "Karla";
+  font-size: 16px;
+  margin-top: 1rem;
+  width: 20rem;
+  padding: 1.5rem;
+  font-weight: normal;
+}
+
+.signup-form-container.expanded {
+  display: flex;
+}
+
+.login-form-container.hidden {
+  display: none;
+}
+
+.login-form-container .login {
+  background-color: #FFF;
+  border-style: none;
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.login-form-container .login:hover {
+  text-decoration: none;
+}
+
+/* Mobile */
 
 @media screen and (max-width: 768px) {
 

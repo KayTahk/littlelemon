@@ -1,4 +1,4 @@
-import {React, useState} from 'react';
+import {React, useState, useReducer} from 'react';
 import logo from './images/Logo.svg';
 import hamburger from './images/icon _hamburger menu.svg';
 import basket from './images/basket.svg';
@@ -14,12 +14,31 @@ import Login from './login';
 import { Link as LinkScroll } from 'react-scroll/modules';
 import ScrollToTop from './ScrollToTop';
 import { HashLink } from 'react-router-hash-link';
-
+import {fetchAPI, submitAPI} from './ReserveApi'
+import ReservationConfirmed from './ReservationConfirmed';
 
 function Nav() {
     const [isNavExpanded, setIsNavExpanded] = useState(false);
     function handleNavOnClick() {
         setIsNavExpanded(!isNavExpanded);
+    }
+
+    /* https://raw.githubusercontent.com/Meta-Front-End-Developer-PC/capstone/master/api.js */
+
+   function updateTimes(availableTimes, date) {
+    if (date !== null ) return fetchAPI(date);
+    return availableTimes;
+    };
+
+    const initializeTimes = [];
+
+    const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes);
+
+    function submitForm(formdata) {
+        if (submitAPI(formdata) === true) {
+            window.location.href = '/reservation-confirmed';
+        }
+
     }
 
     return (
@@ -40,9 +59,10 @@ function Nav() {
         <Routes>
             <Route path='/' element={<><Hero /><Highlights /><About /><Testimonials /></>}></Route>
             <Route path="/menu" element={<Menu />}></Route>
-            <Route path="/reservations" element={<Reservations />}></Route>
+            <Route path="/reservations" element={<Reservations availableTimes={availableTimes} updateTimes={dispatch} submitForm={submitForm} />}></Route>
             <Route path="/order-online" element={<OrderOnline />}></Route>
             <Route path="/login" element={<Login />}></Route>
+            <Route path="/reservation-confirmed" element={<ReservationConfirmed />}></Route>
         </Routes>
         </header>
     );

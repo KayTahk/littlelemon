@@ -1,8 +1,14 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen, fireEvent } from '@testing-library/react';
+import Reservations from './components/Reservations';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('Renders the Reservations heading', () => {
+  render(<Reservations availableTimes={[]} />);
+  const headingElement = screen.getByText("Reserve a Table");
+  expect(headingElement).toBeInTheDocument();
+});
+
+test('initializeTimes function returns expected value', () => {
+});
+
+test('updateTimes function returns the same value that is provided in the state', () => {
 });

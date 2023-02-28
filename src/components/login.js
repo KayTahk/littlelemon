@@ -23,6 +23,13 @@ function Login() {
     );
 };
 
+const getIsFormLoginValid = () => {
+    return (
+        email &&
+        password.value.length >= 8
+    );
+};
+
   const clearForm = () => {
     setFirstName("");
     setLastName("");
@@ -36,6 +43,12 @@ function Login() {
     clearForm();
   };
 
+  const handleLoginSubmit = (e) => {
+    e.preventDefault();
+    alert("You are signed in!");
+    clearForm();
+  };
+
   const [isSignupSelected, setIsSignupSelected] = useState(false);
     function handleSignupOnClick() {
         setIsSignupSelected(!isSignupSelected);
@@ -43,7 +56,7 @@ function Login() {
 
   return (
     <><div className={isSignupSelected ? "login-form-container hidden" : "login-form-container"}>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleLoginSubmit}>
               <fieldset>
                   <h2>Login</h2>
                   <div className="Field">
@@ -72,7 +85,7 @@ function Login() {
                   </div>
                   <button
                       type="submit"
-                      disabled={!getIsFormValid()}>
+                      disabled={!getIsFormLoginValid()}>
                       Login
                   </button>
               </fieldset>

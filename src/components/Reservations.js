@@ -55,7 +55,7 @@ export default function Reservations(props) {
         </div>
       <form onSubmit={handleSubmit}>
         <div className="Field">
-        <p>Date:</p>
+        <label for="date">Date:</label>
         <input
           type="date"
           name="date"
@@ -66,7 +66,7 @@ export default function Reservations(props) {
         ></input>
         </div>
         <div className={isDateValid ? "field" : "fieldHidden"}>
-        <p>Time:</p>
+        <label for="time">Time:</label>
           <select
             type="text"
             name="time"
@@ -78,7 +78,7 @@ export default function Reservations(props) {
               {finalTime}</select>
         </div>
         <div className={isValid ? "field" : "fieldHidden"}>
-        <p>Number of Guests:</p>
+        <label for="numberofguests">Number of Guests:</label>
           <input
             type="number"
             name="numberofguests"
@@ -90,7 +90,7 @@ export default function Reservations(props) {
           />
         </div>
         <div className={isValid ? "field" : "fieldHidden"}>
-        <p>Occasion:</p>
+        <label for="occasion">Occasion:</label>
           <select
             type="text"
             name="occasion"
@@ -106,7 +106,7 @@ export default function Reservations(props) {
           </select>
         </div>
         <div className={isValid ? "field" : "fieldHidden"}>
-        <p>Name:</p>
+        <label for="namme">Name:</label>
           <input
             type="text"
             name="name"
@@ -117,7 +117,7 @@ export default function Reservations(props) {
           />
         </div>
         <div className={isValid ? "field" : "fieldHidden"}>
-        <p>Email:</p>
+        <label for="email">Email:</label>
           <input
             type="email"
             name="email"
@@ -127,7 +127,7 @@ export default function Reservations(props) {
           />
         </div>
         <div className={isValid ? "field" : "fieldHidden"}>
-        <p>Phone Number:</p>
+        <label for="phonenumber">Phone Number:</label>
           <input
             type="number"
             name="phonenumber"
@@ -136,7 +136,7 @@ export default function Reservations(props) {
             onChange={handleChange}
           />
         </div>
-        <div>
+        <div className="reserve-button">
           <button disabled={!isValid}>Make Your Reservation</button>
         </div>
       </form>
